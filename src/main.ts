@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-<<<<<<< HEAD
 import App from './App.vue'
 import router from './router'
 import '@/style/normalize.css'
@@ -34,9 +33,3 @@ app.use(elementIcons)
 app.use(ColorPicker)
 app.component('SvgIcon', SvgIcon)
 app.mount('#app')
-=======
-import './style.css'
-import App from './App.vue'
-
-createApp(App).mount('#app')
->>>>>>> b928a98f11be1ef4272994a4fed3fda2388a8f60

@@ -1,7 +1,7 @@
 <!-- 首页标题栏 -->
 <template>
   <div class="nav-bar-box">
-    <div class="logo">
+    <div class="logo" @click="toIndex">
       <img src="@/assets/logo.png" alt="logo" srcset="" />
       <span>Resume制简</span>
     </div>
@@ -61,6 +61,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
 interface IBgcColor {
   bgColor?: string
   fontColor?: string
@@ -72,10 +74,26 @@ withDefaults(defineProps<IBgcColor>(), {
   iconColor: '#fff'
 })
 
-const toMyResume = () => {}
-const toTemplate = () => {}
+const toMyResume = () => {
+  router.push({
+    path: '/myResume',
+    query: {}
+  })
+}
+const toTemplate = () => {
+  router.push({
+    path: '/template',
+    query: {}
+  })
+}
 const toForum = () => {}
 const toAIAssistant = () => {}
+const toIndex = () => {
+  router.push({
+    path: '/',
+    query: {}
+  })
+}
 </script>
 <style lang="scss" scoped>
 .nav-bar-box {

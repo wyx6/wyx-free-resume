@@ -4,6 +4,8 @@ const Design = () => import('@/view/design/index.vue')
 const Index = () => import('@/view/index/index.vue')
 const Custom = () => import('@/view/custom/index.vue')
 const Chat = () => import('@/view/chat/index.vue')
+const template = () => import('@/view/template/index.vue')
+const myResume = () => import('@/view/myResume/index.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -45,6 +47,26 @@ const routes: Array<RouteRecordRaw> = [
       requireLogin: true
     },
     component: Chat
+  },
+  {
+    path: '/template',
+    name: 'template',
+    meta: {
+      title: '简历模板',
+      keepAlive: true,
+      requireLogin: true
+    },
+    component: template
+  },
+  {
+    path: '/myResume',
+    name: 'myResume',
+    meta: {
+      title: '我的简历',
+      keepAlive: true,
+      requireLogin: true
+    },
+    component: myResume
   }
 ]
 // const routerHistory = createWebHistory('/');
