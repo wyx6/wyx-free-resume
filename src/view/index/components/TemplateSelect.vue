@@ -10,7 +10,7 @@
     <!-- 模板列表 -->
     <div class="card-list">
       <template v-for="(item, index) in templateList" :key="index">
-        <TemplateCard :card-data="item" @to-design="toDesign(item)"></TemplateCard>
+        <TemplateCard :card-data="item" @to-design="toDesign(item)" class="card"></TemplateCard>
       </template>
     </div>
   </div>
@@ -44,15 +44,15 @@ const toDesign = (Item: ITempList) => {
 
 <style lang="scss" scoped>
 .template-select-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 700px;
-
+  margin-bottom: 20px;
   .card-list {
     width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 25px;
+    .card {
+      margin-bottom: 30px;
+    }
   }
 }
 </style>

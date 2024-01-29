@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './store/router'
 import '@/style/normalize.css'
 import component from '@/utils/registerCom'
 // 注册所有图标

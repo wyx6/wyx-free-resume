@@ -4,12 +4,24 @@
     <design-nav @generate-report="generateReport" @reset="reset"></design-nav>
     <!-- 内容区域 -->
     <div class="content">
-      <!-- 模块操作区域 -->
-      <div class="left" ref="leftRef">
-        <CScrollbar trigger="hover">
-          <Title show-collapse @unflod-or-collapse="unflodOrCollapse"></Title>
-          <model-list :left-show="leftStaus" :key="refreshUuid"></model-list>
-        </CScrollbar>
+      <!-- 模块数据数据配置区域 -->
+      <div class="left" :key="refreshUuid">
+        <!-- 模块标题 -->
+        <Title :title="cptTitle"></Title>
+        <c-scrollbar
+          trigger="hover"
+          :h-thumb-style="{
+            'background-color': 'rgba(0,0,0,0.4)'
+          }"
+        >
+          <component
+            :is="optionsComponents[cptOptionsName]"
+            v-if="cptName"
+            :key="cptKeyId"
+          ></component>
+          <!-- 全局主题样式设置 -->
+          <GlobalStyleOptions v-else></GlobalStyleOptions>
+        </c-scrollbar>
       </div>
 
       <!-- 预览区域 -->
@@ -36,24 +48,12 @@
         </div>
       </div>
 
-      <!-- 模块数据数据配置区域 -->
-      <div class="right" :key="refreshUuid">
-        <!-- 模块标题 -->
-        <Title :title="cptTitle"></Title>
-        <c-scrollbar
-          trigger="hover"
-          :h-thumb-style="{
-            'background-color': 'rgba(0,0,0,0.4)'
-          }"
-        >
-          <component
-            :is="optionsComponents[cptOptionsName]"
-            v-if="cptName"
-            :key="cptKeyId"
-          ></component>
-          <!-- 全局主题样式设置 -->
-          <GlobalStyleOptions v-else></GlobalStyleOptions>
-        </c-scrollbar>
+      <!-- 模块操作区域 -->
+      <div class="right" ref="leftRef">
+        <CScrollbar trigger="hover">
+          <Title show-collapse @unflod-or-collapse="unflodOrCollapse"></Title>
+          <model-list :left-show="leftStaus" :key="refreshUuid"></model-list>
+        </CScrollbar>
       </div>
     </div>
   </div>
@@ -109,9 +109,10 @@ const resetStoreLocal = async () => {
   TEMPLATE_JSON = cloneDeep(data)
   TEMPLATE_JSON.ID = id as string
   TEMPLATE_JSON.NAME = name as string
-  TEMPLATE_JSON.COMPONENTS.forEach((item) => {
-    item.data = MODEL_DATA_JSON[item.model]
-  })
+  ;(id == '2' || id == '3' || id == '4 ' || id == '5') &&
+    TEMPLATE_JSON.COMPONENTS.forEach((item) => {
+      item.data = MODEL_DATA_JSON[item.model]
+    })
   setUuid() //设置uuid
   //修改Store数据
   changeResumeJsonData(TEMPLATE_JSON)
@@ -231,7 +232,7 @@ const contentChangeHeight = (height: number) => {
     display: flex;
     width: 100%;
 
-    .left {
+    .right {
       width: 300px;
       background-color: #fff;
       height: calc(100vh - 50px);
@@ -286,7 +287,7 @@ const contentChangeHeight = (height: number) => {
       }
     }
 
-    .right {
+    .left {
       width: 355px;
       background-color: #fff;
       overflow-y: auto;

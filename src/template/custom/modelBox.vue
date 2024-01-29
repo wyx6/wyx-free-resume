@@ -46,6 +46,7 @@ const props = defineProps<{
   item: IMATERIALITEM
   components: any
 }>()
+console.log(props.item, '??????????')
 
 const emits = defineEmits(['left-right-copy-model', 'left-right-delete-model'])
 

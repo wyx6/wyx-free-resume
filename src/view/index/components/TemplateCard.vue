@@ -62,6 +62,7 @@ const toDesign = () => {
 <style lang="scss" scoped>
 .template-card-box {
   width: 270px;
+  height: 378px;
   background-color: #fff;
   border-radius: 5px;
   position: relative;
