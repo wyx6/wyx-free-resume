@@ -3,9 +3,18 @@
   <el-tabs v-model="activeName" type="card" class="demo-tabs" stretch>
     <el-tab-pane label="数据配置" name="data">
       <el-form-item label="标题名称:">
-        <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+        <el-input
+          v-model="modelItem.data.title"
+          type="text"
+          maxlength="15"
+          show-word-limit
+        />
       </el-form-item>
-      <div v-for="(item, index) in modelItem.data.LIST" :key="index" class="edu-list">
+      <div
+        v-for="(item, index) in modelItem.data.LIST"
+        :key="index"
+        class="edu-list"
+      >
         <p>
           <span>学历{{ index + 1 }}</span>
           <el-button
@@ -27,11 +36,21 @@
           <el-switch v-model="modelItem.data.isShow.date" />
         </el-form-item>
         <el-form-item label="学校名称:">
-          <el-input v-model="item.schoolName" type="text" maxlength="40" show-word-limit />
+          <el-input
+            v-model="item.schoolName"
+            type="text"
+            maxlength="40"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.schoolName" />
         </el-form-item>
         <el-form-item label="专业名称:">
-          <el-input v-model="item.specialized" type="text" maxlength="20" show-word-limit />
+          <el-input
+            v-model="item.specialized"
+            type="text"
+            maxlength="20"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.specialized" />
         </el-form-item>
         <el-form-item label="学历学位:">
@@ -72,11 +91,11 @@ import CommonTitleOptions from './CommonTitleOptions.vue'
 import { useDegreeList } from '@/hooks/useDegreeList'
 import CommonOptions from './CommonOptions.vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
-defineOptions({ name: 'EDU_BACKGROUND_OPTIONS' })
+defineOptions({ name: 'EDUBACKGROUNDOPTIONS' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
 
-let activeName = ref('data')
+const activeName = ref('data')
 const { degreeList } = useDegreeList() // 学历列表
 // 添加学历
 const addEdu = (): void => {

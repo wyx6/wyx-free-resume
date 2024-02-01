@@ -10,9 +10,8 @@ export const getAssetsFile = (url: string) => {
 export const pxTonumber = (value: string | undefined): number => {
   if (value) {
     return Number(value.split('px')[0])
-  } else {
-    return 0
   }
+  return 0
 }
 // 工具方法--熟练度文字转数值
 export const textToNumber = (value: string): number => {
@@ -43,9 +42,8 @@ export const numberToText = (value: number) => {
     return '掌握'
   } else if (value <= 75) {
     return '熟练'
-  } else {
-    return '精通'
   }
+  return '精通'
 }
 
 // 生成uuid
@@ -56,12 +54,17 @@ export const getUuid = (): string => {
 // 时间格式转化：['2015-5', '2019-6'] -> 2015.05 - 2019.06
 export const formatDate = (dataArray: Array<string> | string): string => {
   if (Array.isArray(dataArray)) {
-    const startDate = moment(new Date(dataArray[0])).format('YYYY.MM').split('-').join('.')
-    const endDate = moment(new Date(dataArray[1])).format('YYYY.MM').split('-').join('.')
+    const startDate = moment(new Date(dataArray[0]))
+      .format('YYYY.MM')
+      .split('-')
+      .join('.')
+    const endDate = moment(new Date(dataArray[1]))
+      .format('YYYY.MM')
+      .split('-')
+      .join('.')
     return `${startDate}-${endDate}`
-  } else {
-    return moment(new Date(dataArray)).format('YYYY.MM').split('-').join('.')
   }
+  return moment(new Date(dataArray)).format('YYYY.MM').split('-').join('.')
 }
 // 开启全局loading
 export const openGlobalLoading = () => {

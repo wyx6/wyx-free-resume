@@ -4,9 +4,18 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="70px" label-position="left">
         <el-form-item label="标题名称:">
-          <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.title"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
-        <div v-for="(item, index) in modelItem.data.LIST" :key="index" class="campus-list">
+        <div
+          v-for="(item, index) in modelItem.data.LIST"
+          :key="index"
+          class="campus-list"
+        >
           <p>
             <span>实习经验{{ index + 1 }}</span>
             <el-button
@@ -28,11 +37,21 @@
             <el-switch v-model="modelItem.data.isShow.date" />
           </el-form-item>
           <el-form-item label="公司名称:">
-            <el-input v-model="item.companyName" type="text" maxlength="35" show-word-limit />
+            <el-input
+              v-model="item.companyName"
+              type="text"
+              maxlength="35"
+              show-word-limit
+            />
             <el-switch v-model="modelItem.data.isShow.companyName" />
           </el-form-item>
           <el-form-item label="主要职责:">
-            <el-input v-model="item.posts" type="text" maxlength="35" show-word-limit />
+            <el-input
+              v-model="item.posts"
+              type="text"
+              maxlength="35"
+              show-word-limit
+            />
             <el-switch v-model="modelItem.data.isShow.posts" />
           </el-form-item>
           <el-form-item
@@ -84,10 +103,10 @@ import CommonOptions from './CommonOptions.vue'
 import CommonTitleOptions from './CommonTitleOptions.vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
 import { Delete, SemiSelect, Plus } from '@element-plus/icons-vue'
-defineOptions({ name: 'INTERNSHIP_EXPERIENCE_OPTIONS' })
+defineOptions({ name: 'INTERNSHIPEXPERIENCEOPTIONS' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
-let activeName = ref('data')
+const activeName = ref('data')
 
 /**
  * 数据配置

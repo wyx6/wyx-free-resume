@@ -95,7 +95,11 @@ export default defineConfig({
         // 最小化拆分包
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString()
+            return id
+              .toString()
+              .split('node_modules/')[1]
+              .split('/')[0]
+              .toString()
           }
         },
         chunkFileNames: 'js/[name]-[hash].js', // 引入文件名的名称

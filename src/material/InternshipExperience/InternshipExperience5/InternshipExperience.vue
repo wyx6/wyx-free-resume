@@ -2,7 +2,10 @@
 <template>
   <div class="internship-experience">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 校园经历 -->
     <div class="internship-experience-list">
       <div v-for="(item, index) in modelData.LIST" :key="index" class="list">
@@ -10,7 +13,9 @@
           <!-- 公司名称 -->
           <li class="list-title">{{ item.companyName }}</li>
           <!-- 经历时间 -->
-          <li v-if="modelData.isShow.date" class="list-title">{{ formatDate(item.date) }}</li>
+          <li v-if="modelData.isShow.date" class="list-title">
+            {{ formatDate(item.date) }}
+          </li>
         </ul>
         <!-- 主要职责 -->
         <div class="post">{{ item.posts }}</div>
@@ -19,7 +24,9 @@
           <!-- <p class="left">实习内容</p> -->
           <div class="content-list">
             <ul>
-              <li v-for="(list, index) in item.jobContent" :key="index">{{ list.content }}</li>
+              <li v-for="(list, index) in item.jobContent" :key="index">
+                {{ list.content }}
+              </li>
             </ul>
           </div>
         </div>

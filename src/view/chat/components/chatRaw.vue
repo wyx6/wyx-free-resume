@@ -4,7 +4,7 @@
       <div class="profile">
         <img :src="isAi ? bot : user" :alt="isAi ? 'bot' : 'user'" />
       </div>
-      <div class="message" :id="id">{{ value }}</div>
+      <div :id="id" class="message">{{ value }}</div>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import bot from '@/assets/images/bot.svg'
 import user from '@/assets/images/user.svg'
-defineProps<{ isAi: boolean; value: FormDataEntryValue; id?: string }>()
+defineProps<{ isAi: boolean; value; id?: string }>()
 </script>
 
 <style lang="scss" scoped>

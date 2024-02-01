@@ -3,9 +3,18 @@
   <el-tabs v-model="activeName" type="card" class="demo-tabs" stretch>
     <el-tab-pane label="数据配置" name="data">
       <el-form-item label="标题名称:">
-        <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+        <el-input
+          v-model="modelItem.data.title"
+          type="text"
+          maxlength="15"
+          show-word-limit
+        />
       </el-form-item>
-      <div v-for="(item, index) in modelItem.data.LIST" :key="index" class="awards-list">
+      <div
+        v-for="(item, index) in modelItem.data.LIST"
+        :key="index"
+        class="awards-list"
+      >
         <p>
           <span>奖项{{ index + 1 }}</span>
           <el-button
@@ -17,15 +26,29 @@
           />
         </p>
         <el-form-item label="日期选择:">
-          <el-date-picker v-model="item.date" type="month" placeholder="Pick a month" />
+          <el-date-picker
+            v-model="item.date"
+            type="month"
+            placeholder="Pick a month"
+          />
           <el-switch v-model="modelItem.data.isShow.date" />
         </el-form-item>
         <el-form-item label="奖项名称:">
-          <el-input v-model="item.awardsName" type="text" maxlength="40" show-word-limit />
+          <el-input
+            v-model="item.awardsName"
+            type="text"
+            maxlength="40"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.awardsName" />
         </el-form-item>
         <el-form-item label="所获奖项:">
-          <el-input v-model="item.awardsGrade" type="text" maxlength="20" show-word-limit />
+          <el-input
+            v-model="item.awardsGrade"
+            type="text"
+            maxlength="20"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.awardsGrade" />
         </el-form-item>
       </div>
@@ -48,11 +71,11 @@ import { Delete } from '@element-plus/icons-vue'
 import CommonOptions from './CommonOptions.vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
 defineOptions({
-  name: 'AWARDS_OPTIONS'
+  name: 'AWARDSOPTIONS'
 })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
-let activeName = ref('data')
+const activeName = ref('data')
 /**
  * 数据配置
  */

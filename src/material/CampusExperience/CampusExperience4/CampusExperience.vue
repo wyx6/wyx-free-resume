@@ -2,7 +2,10 @@
 <template>
   <div class="campus-experience">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 校园经历 -->
     <div class="campue-experience-list">
       <div v-for="(item, index) in modelData.LIST" :key="index" class="list">
@@ -10,7 +13,9 @@
           <!-- 经历时间 -->
           <li v-if="modelData.isShow.date">{{ formatDate(item.date) }}</li>
           <!-- 项目名称 -->
-          <li v-if="modelData.isShow.campusBriefly">{{ item.campusBriefly }}</li>
+          <li v-if="modelData.isShow.campusBriefly">
+            {{ item.campusBriefly }}
+          </li>
           <!-- 主要职责 -->
           <li v-if="modelData.isShow.campusDuty">{{ item.campusDuty }}</li>
         </ul>

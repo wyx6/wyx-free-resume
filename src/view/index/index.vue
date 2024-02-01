@@ -1,14 +1,17 @@
 <template>
   <div class="index-box">
     <!-- 导航栏 -->
-    <NavBar :bg-color="navColor" :font-color="fontColor" :icon-color="iconColor"></NavBar>
+    <NavBar
+      :bg-color="navColor"
+      :font-color="fontColor"
+      :icon-color="iconColor"
+    ></NavBar>
     <!-- 项目介绍 -->
     <ProjectIntroduce
       @online-make="scrollToMake"
       @custom-template="scrollToCustom"
       @ai-helper="toChatPage"
-    >
-    </ProjectIntroduce>
+    ></ProjectIntroduce>
     <!-- 模板选择 -->
     <Template-select ref="onlineMakeRef"></Template-select>
     <!-- 自定义模板 -->

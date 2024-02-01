@@ -1,13 +1,19 @@
 <template>
   <!-- 导航栏 -->
-  <NavBar :bg-color="navColor" :font-color="fontColor" :icon-color="iconColor"></NavBar>
+  <NavBar
+    :bg-color="navColor"
+    :font-color="fontColor"
+    :icon-color="iconColor"
+  ></NavBar>
   <div class="box">
     <div class="middle-box">
       <div class="left">
         <div class="infor-box">
           <div class="title">个人信息</div>
           <div class="per-infor">
-            <div class="per-img"><img src="@/assets/images/home-banner.png" alt="" /></div>
+            <div class="per-img">
+              <img src="@/assets/images/home-banner.png" alt="" />
+            </div>
             <div class="infor">
               <div class="name">小希学前端</div>
               <div class="school">
@@ -21,8 +27,14 @@
         <div class="resume-box">
           <div class="title">全部简历</div>
           <div class="all-resume">
-            <div v-for="(resume, index) in myResumes" :key="index" class="single">
-              <div class="resume-img"><img src="@/assets/images/home-banner.png" alt="" /></div>
+            <div
+              v-for="(resume, index) in myResumes"
+              :key="index"
+              class="single"
+            >
+              <div class="resume-img">
+                <img src="@/assets/images/home-banner.png" alt="" />
+              </div>
               <div class="resume-right">
                 <div class="resume-name">优秀大学生实习简历模板</div>
                 <div class="resume-info">
@@ -38,7 +50,11 @@
         </div>
       </div>
       <div class="right">
-        <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
+        <el-tabs
+          v-model="activeName"
+          class="demo-tabs"
+          @tab-click="handleClick"
+        >
           <el-tab-pane label="帖子" name="first">
             <template #label>
               <span class="custom-tabs-label">
@@ -46,10 +62,15 @@
               </span>
             </template>
             <div class="content-box">
-              <div v-for="(article, index) in articles" class="article" :key="index">
+              <div
+                v-for="(article, index) in articles"
+                :key="index"
+                class="article"
+              >
                 <div class="article-content">
                   <div class="article-title">
-                    封装搭建Vue3 + Vite项目框架进阶版，值得学习收藏【前端工程化】
+                    封装搭建Vue3 +
+                    Vite项目框架进阶版，值得学习收藏【前端工程化】
                   </div>
                   <div class="article-intro">
                     小希这次带来了进阶版的Vue3 +
@@ -58,17 +79,24 @@
                   </div>
                   <div class="article-data">
                     <div>
-                      <el-icon color="#409EFC" class="no-inherit"> <View /> </el-icon>926
+                      <el-icon color="#409EFC" class="no-inherit">
+                        <View />
+                      </el-icon>
+                      926
                     </div>
                     <div>
-                      <el-icon color="#409EFC"><ChatDotSquare /></el-icon>12
+                      <el-icon color="#409EFC"><ChatDotSquare /></el-icon>
+                      12
                     </div>
                     <div>
-                      <el-icon color="#409EFC"><ChatDotSquare /></el-icon>32
+                      <el-icon color="#409EFC"><ChatDotSquare /></el-icon>
+                      32
                     </div>
                   </div>
                 </div>
-                <div class="article-img"><img src="@/assets/images/home-banner.png" alt="" /></div>
+                <div class="article-img">
+                  <img src="@/assets/images/home-banner.png" alt="" />
+                </div>
               </div>
             </div>
           </el-tab-pane>
@@ -76,16 +104,18 @@
             <template #label>
               <span class="custom-tabs-label">
                 <span>收藏</span>
-              </span> </template
-            >收藏</el-tab-pane
-          >
+              </span>
+            </template>
+            收藏
+          </el-tab-pane>
           <el-tab-pane label="点赞" name="third">
             <template #label>
               <span class="custom-tabs-label">
                 <span>点赞</span>
-              </span> </template
-            >点赞</el-tab-pane
-          >
+              </span>
+            </template>
+            点赞
+          </el-tab-pane>
           <el-tab-pane label="更多功能敬请期待" name="fourth" disabled>
             <template #label>
               <span class="custom-tabs-label">
@@ -93,8 +123,8 @@
               </span>
             </template>
 
-            更多功能敬请期待</el-tab-pane
-          >
+            更多功能敬请期待
+          </el-tab-pane>
         </el-tabs>
       </div>
     </div>
@@ -105,8 +135,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import NavBar from '@/components/NavBar/NavBar.vue'
 import { throttle } from 'lodash'
-let myResumes = ref(3)
-let articles = ref(4)
+const myResumes = ref(3)
+const articles = ref(4)
 import type { TabsPaneContext } from 'element-plus'
 import { View } from '@element-plus/icons-vue'
 // 监听元素滚动

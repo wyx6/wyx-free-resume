@@ -4,17 +4,35 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="70px" label-position="left">
         <el-form-item label="标题名称:">
-          <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.title"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
-        <div v-for="(item, index) in modelItem.data.LIST" :key="index" class="skill-list">
+        <div
+          v-for="(item, index) in modelItem.data.LIST"
+          :key="index"
+          class="skill-list"
+        >
           <el-divider>
             <el-icon><star-filled /></el-icon>
           </el-divider>
           <el-form-item :label="`技能${index + 1}:`">
-            <el-input v-model="item.skillName" type="text" maxlength="15" show-word-limit />
+            <el-input
+              v-model="item.skillName"
+              type="text"
+              maxlength="15"
+              show-word-limit
+            />
           </el-form-item>
           <el-form-item label="熟练度:">
-            <el-select v-model="item.proficiency" class="m-2" placeholder="Select">
+            <el-select
+              v-model="item.proficiency"
+              class="m-2"
+              placeholder="Select"
+            >
               <el-option
                 v-for="(item, index) in proficiencyList"
                 :key="index"
@@ -54,11 +72,11 @@ import CommonOptions from './CommonOptions.vue'
 import { Plus, SemiSelect } from '@element-plus/icons-vue'
 import { StarFilled } from '@element-plus/icons-vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
-defineOptions({ name: 'TEMPLATE2_SKILL_SPECIALTIES' })
+defineOptions({ name: 'TEMPLATE2SKILLSPECIALTIES' })
 
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
-let activeName = ref('data')
+const activeName = ref('data')
 
 /**
  * 数据配置

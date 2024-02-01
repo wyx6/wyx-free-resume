@@ -4,11 +4,25 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="70px" label-position="left">
         <el-form-item label="标题名称:">
-          <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.title"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
-        <div v-for="(item, index) in modelItem.data.LIST" :key="index" class="skill-list">
+        <div
+          v-for="(item, index) in modelItem.data.LIST"
+          :key="index"
+          class="skill-list"
+        >
           <el-form-item :label="`技能${index + 1}:`">
-            <el-input v-model="item.introduce" type="textarea" show-word-limit :rows="4" />
+            <el-input
+              v-model="item.introduce"
+              type="textarea"
+              show-word-limit
+              :rows="4"
+            />
             <el-button
               :disabled="index === 0"
               type="danger"
@@ -40,10 +54,10 @@ import { ref } from 'vue'
 import CommonOptions from './CommonOptions.vue'
 import { Plus, SemiSelect } from '@element-plus/icons-vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
-defineOptions({ name: 'SKILL_SPECIALTIES_OPTIONS' })
+defineOptions({ name: 'SKILLSPECIALTIESOPTIONS' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
-let activeName = ref('data')
+const activeName = ref('data')
 
 /**
  * 数据配置

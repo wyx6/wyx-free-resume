@@ -5,10 +5,10 @@
       <p>提供多种模板和设计风格,30分钟快速制作一份精美简历</p>
       <!-- 更多功能 -->
       <div class="more-panel">
-        <div @click="onlineMake" class="button">在线制作</div>
-        <div @click="customTemplate" class="button">简历模板</div>
-        <div @click="customTemplate" class="button">求职论坛</div>
-        <div @click="AiHelper" class="button ai-helper">AI助手</div>
+        <div class="button" @click="onlineMake">在线制作</div>
+        <div class="button" @click="customTemplate">简历模板</div>
+        <div class="button" @click="customTemplate">求职论坛</div>
+        <div class="button ai-helper" @click="AiHelper">AI助手</div>
       </div>
     </div>
     <div class="right">

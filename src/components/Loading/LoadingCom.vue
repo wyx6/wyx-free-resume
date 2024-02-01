@@ -60,8 +60,8 @@
     // transform is what's being animated
     transform: translateY(calc((var(--sz) - var(--p-sz)) * -1));
 
-    animation: loader-box-bounce 0.5s cubic-bezier(0.3, 0.5, 0.4, 0.95) calc(var(--i) * 0.06s)
-      infinite alternate-reverse;
+    animation: loader-box-bounce 0.5s cubic-bezier(0.3, 0.5, 0.4, 0.95)
+      calc(var(--i) * 0.06s) infinite alternate-reverse;
   }
 
   &:first-of-type {

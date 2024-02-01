@@ -1,16 +1,21 @@
 <template>
   <div
-    class="material-model-box"
     v-if="item.show"
+    :ref="(el) => setRefItem(el, item.keyId)"
+    class="material-model-box"
     @mouseover="hendleOver"
     @mouseleave="hendleLeave"
-    :ref="(el) => setRefItem(el, item.keyId)"
     @click="selectModel"
   >
-    <div class="edit-box" v-if="hoverId === item.keyId">
+    <div v-if="hoverId === item.keyId" class="edit-box">
       <el-tooltip content="复制当前模块" placement="bottom" effect="dark">
         <div class="copy" @click.stop="addModel(item)">
-          <svg-icon icon-name="icon-jia" class-name="icon" color="#fff" size="16px"></svg-icon>
+          <svg-icon
+            icon-name="icon-jia"
+            class-name="icon"
+            color="#fff"
+            size="16px"
+          ></svg-icon>
         </div>
       </el-tooltip>
       <el-tooltip content="删除当前模块" placement="bottom" effect="dark">
@@ -66,7 +71,10 @@ const hendleLeave = () => {
 
 // 模块ref
 const modelObj = reactive<any>({})
-const setRefItem = (el: ComponentPublicInstance | null | Element, keyId: string) => {
+const setRefItem = (
+  el: ComponentPublicInstance | null | Element,
+  keyId: string
+) => {
   if (el) {
     modelObj[keyId] = {
       el: el,
@@ -85,7 +93,10 @@ watch(
     }
     //如果选中模块就滚动模块到当前视图
     if (newVal && modelObj[newVal]) {
-      modelObj[newVal].el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      modelObj[newVal].el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
       modelObj[newVal].el.style.borderColor = '#7ec97e'
     }
   },
@@ -129,7 +140,7 @@ const deleteModel = (item: IMATERIALITEM) => {
 // 传统布局-模块复制
 const classicalCopyModel = (modelinfo: IMATERIALITEM, modelId: string) => {
   //拷贝选中模块的数据
-  let copyModel = cloneDeep(modelinfo)
+  const copyModel = cloneDeep(modelinfo)
   //获取插入位置
   const index = useGetModelIndex(resumeJsonNewStore.value.COMPONENTS, modelId)
   // 拼接更新

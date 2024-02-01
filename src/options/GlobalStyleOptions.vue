@@ -10,7 +10,12 @@
           ></color-picker-custom-vue>
         </el-form-item>
         <el-form-item label="左侧容器宽度：">
-          <el-input-number v-model="form.leftWidth" :min="0" :max="820" @change="handleLeftWidth" />
+          <el-input-number
+            v-model="form.leftWidth"
+            :min="0"
+            :max="820"
+            @change="handleLeftWidth"
+          />
         </el-form-item>
         <el-form-item label="右侧主题颜色:">
           <color-picker-custom-vue
@@ -124,19 +129,39 @@
       </el-form-item>
       <!-- 模块上下边距设置 -->
       <el-form-item label="模块上外边距:">
-        <el-input-number v-model="mTop" :min="-100" :max="100" @change="handleChange" />
+        <el-input-number
+          v-model="mTop"
+          :min="-100"
+          :max="100"
+          @change="handleChange"
+        />
       </el-form-item>
       <el-form-item label="模块下外边距:">
-        <el-input-number v-model="mBottom" :min="-100" :max="100" @change="handleChangeMBottom" />
+        <el-input-number
+          v-model="mBottom"
+          :min="-100"
+          :max="100"
+          @change="handleChangeMBottom"
+        />
       </el-form-item>
 
       <!-- 模块上内边距 -->
       <el-form-item label="模块上内边距:">
-        <el-input-number v-model="pTop" :min="-100" :max="100" @change="handleChangePTop" />
+        <el-input-number
+          v-model="pTop"
+          :min="-100"
+          :max="100"
+          @change="handleChangePTop"
+        />
       </el-form-item>
       <!-- 模块下内边距 -->
       <el-form-item label="模块下内边距:">
-        <el-input-number v-model="pBottom" :min="-100" :max="100" @change="handleChangePBottom" />
+        <el-input-number
+          v-model="pBottom"
+          :min="-100"
+          :max="100"
+          @change="handleChangePBottom"
+        />
       </el-form-item>
 
       <!-- 模块左右内边距 -->
@@ -199,7 +224,9 @@ const changeFirstTitleFontSize = (value: string) => {
 const fontSizeList = useFontSizeList()
 
 // 字体粗细
-const fontWeightList = reactive<Array<number>>([100, 200, 300, 400, 500, 600, 700, 800, 900])
+const fontWeightList = reactive<Array<number>>([
+  100, 200, 300, 400, 500, 600, 700, 800, 900
+])
 
 // 二级标题字体大小发生变化时
 const secondTitleFontSizeChange = (value: string) => {
@@ -244,7 +271,9 @@ const textFontWeight = (value: number) => {
 }
 
 // 上外边距
-const defaultMtop: number = pxTonumber(resumeJsonNewStore.value.GLOBAL_STYLE.modelMarginTop)
+const defaultMtop: number = pxTonumber(
+  resumeJsonNewStore.value.GLOBAL_STYLE.modelMarginTop
+)
 const mTop = ref<number>(defaultMtop)
 const handleChange = (value: number): void => {
   if (resumeJsonNewStore.value.GLOBAL_STYLE) {
@@ -255,7 +284,9 @@ const handleChange = (value: number): void => {
   })
 }
 // 下外边距
-const defaultMbottom: number = pxTonumber(resumeJsonNewStore.value.GLOBAL_STYLE.modelMarginBottom)
+const defaultMbottom: number = pxTonumber(
+  resumeJsonNewStore.value.GLOBAL_STYLE.modelMarginBottom
+)
 const mBottom = ref<number>(defaultMbottom)
 const handleChangeMBottom = (value: number): void => {
   if (resumeJsonNewStore.value.GLOBAL_STYLE) {
@@ -266,7 +297,9 @@ const handleChangeMBottom = (value: number): void => {
   })
 }
 // 上内边距
-const defaultPTop: number = pxTonumber(resumeJsonNewStore.value.GLOBAL_STYLE.pTop)
+const defaultPTop: number = pxTonumber(
+  resumeJsonNewStore.value.GLOBAL_STYLE.pTop
+)
 const pTop = ref<number>(defaultPTop)
 const handleChangePTop = (value: number): void => {
   if (resumeJsonNewStore.value.GLOBAL_STYLE) {
@@ -277,7 +310,9 @@ const handleChangePTop = (value: number): void => {
   })
 }
 // 下边距
-const defaultPBottom: number = pxTonumber(resumeJsonNewStore.value.GLOBAL_STYLE.pBottom)
+const defaultPBottom: number = pxTonumber(
+  resumeJsonNewStore.value.GLOBAL_STYLE.pBottom
+)
 const pBottom = ref<number>(defaultPBottom)
 const handleChangePBottom = (value: number): void => {
   if (resumeJsonNewStore.value.GLOBAL_STYLE) {
@@ -289,7 +324,9 @@ const handleChangePBottom = (value: number): void => {
 }
 
 // 左右内边距
-const defaultPLeftRight: number = pxTonumber(resumeJsonNewStore.value.GLOBAL_STYLE.pLeftRight)
+const defaultPLeftRight: number = pxTonumber(
+  resumeJsonNewStore.value.GLOBAL_STYLE.pLeftRight
+)
 const pLeftRight = ref<number>(defaultPLeftRight)
 const handleChangePLeftRight = (value: number): void => {
   if (resumeJsonNewStore.value.GLOBAL_STYLE) {

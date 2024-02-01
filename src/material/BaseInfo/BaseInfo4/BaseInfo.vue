@@ -1,19 +1,30 @@
 <template>
   <div class="base-info">
     <!-- 模块标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 基本信息 -->
     <div class="user-info">
       <div class="left">
         <h1>{{ modelData.name }}</h1>
         <!-- 一句话简介 -->
-        <p v-show="isShow.abstract" class="user-abstract">{{ modelData.abstract }}</p>
+        <p v-show="isShow.abstract" class="user-abstract">
+          {{ modelData.abstract }}
+        </p>
         <!-- 年龄、地点、经验等信息 -->
         <ul>
           <li v-show="isShow.age" class="li-border">{{ modelData.age }}岁</li>
-          <li v-show="isShow.address" class="li-border">{{ modelData.address }}</li>
-          <li v-show="isShow.workService" class="li-border">{{ modelData.workService }}年经验</li>
-          <li v-show="isShow.phoneNumber" class="li-border">{{ modelData.phoneNumber }}</li>
+          <li v-show="isShow.address" class="li-border">
+            {{ modelData.address }}
+          </li>
+          <li v-show="isShow.workService" class="li-border">
+            {{ modelData.workService }}年经验
+          </li>
+          <li v-show="isShow.phoneNumber" class="li-border">
+            {{ modelData.phoneNumber }}
+          </li>
           <li v-show="isShow.email">{{ modelData.email }}</li>
         </ul>
       </div>

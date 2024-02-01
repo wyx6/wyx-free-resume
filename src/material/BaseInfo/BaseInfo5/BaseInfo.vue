@@ -7,8 +7,12 @@
       <!-- <p v-show="isShow.abstract" class="user-abstract">{{ modelData.abstract }}</p> -->
       <!-- 年龄、地点、经验等信息 -->
       <ul>
-        <li v-show="isShow.address" class="li-border">{{ modelData.address }}</li>
-        <li v-show="isShow.phoneNumber" class="li-border">{{ modelData.phoneNumber }}</li>
+        <li v-show="isShow.address" class="li-border">
+          {{ modelData.address }}
+        </li>
+        <li v-show="isShow.phoneNumber" class="li-border">
+          {{ modelData.phoneNumber }}
+        </li>
         <li v-show="isShow.email">{{ modelData.email }}</li>
       </ul>
       <ul>
@@ -19,28 +23,48 @@
       <ul>
         <!-- 求职类型 -->
         <li v-show="isShow.jobSearchType" class="li-border">
-          <svg-icon icon-name="icon-gongzuoleixing" class-name="icon" color="#757575"></svg-icon>
+          <svg-icon
+            icon-name="icon-gongzuoleixing"
+            class-name="icon"
+            color="#757575"
+          ></svg-icon>
           {{ modelData.jobSearchType }}
         </li>
         <!-- 意向岗位 -->
         <li v-show="isShow.intendedPositions" class="li-border">
-          <svg-icon icon-name="icon-yixianggangwei" class-name="icon" color="#757575"></svg-icon
-          >{{ modelData.intendedPositions }}
+          <svg-icon
+            icon-name="icon-yixianggangwei"
+            class-name="icon"
+            color="#757575"
+          ></svg-icon>
+          {{ modelData.intendedPositions }}
         </li>
         <!-- 意向城市 -->
         <li v-show="isShow.intendedCity" class="li-border">
-          <svg-icon icon-name="icon-didiandingwei" class-name="icon" color="#757575"></svg-icon
-          >{{ modelData.intendedCity }}
+          <svg-icon
+            icon-name="icon-didiandingwei"
+            class-name="icon"
+            color="#757575"
+          ></svg-icon>
+          {{ modelData.intendedCity }}
         </li>
         <!-- 期望薪资 -->
         <li v-show="isShow.expectSalary" class="li-border">
-          <svg-icon icon-name="icon-nianduxinchou" class-name="icon" color="#757575"></svg-icon
-          >{{ modelData.expectSalary }}
+          <svg-icon
+            icon-name="icon-nianduxinchou"
+            class-name="icon"
+            color="#757575"
+          ></svg-icon>
+          {{ modelData.expectSalary }}
         </li>
         <!-- 求职状态 -->
         <li v-show="isShow.jobStatus">
-          <svg-icon icon-name="icon-ruzhiriqi" class-name="icon" color="#757575"></svg-icon
-          >{{ modelData.jobStatus }}
+          <svg-icon
+            icon-name="icon-ruzhiriqi"
+            class-name="icon"
+            color="#757575"
+          ></svg-icon>
+          {{ modelData.jobStatus }}
         </li>
       </ul>
     </div>
@@ -55,7 +79,7 @@ import type { IBASEINFO } from '@/interface/model'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 import { reactive } from 'vue'
 defineOptions({
-  name: 'BASE_INFO_5'
+  name: 'BASEINFO5'
 })
 const props = defineProps<{
   modelData: IBASEINFO // 模块数据

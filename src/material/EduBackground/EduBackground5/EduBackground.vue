@@ -1,10 +1,17 @@
 <template>
   <div class="edu-background">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 教育背景 -->
     <div class="edu-list">
-      <div v-for="(item, index) in modelData.LIST" :key="index" class="single-edu">
+      <div
+        v-for="(item, index) in modelData.LIST"
+        :key="index"
+        class="single-edu"
+      >
         <div class="edu-school">
           <!-- 学校名称 -->
           <div v-if="modelData.isShow.schoolName">{{ item.schoolName }}</div>

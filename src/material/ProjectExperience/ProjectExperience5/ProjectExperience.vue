@@ -2,7 +2,10 @@
 <template>
   <div class="project-experience">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 校园经历 -->
     <div class="project-experience-list">
       <div v-for="(item, index) in modelData.LIST" :key="index" class="list">
@@ -21,7 +24,9 @@
           <p class="left">项目内容</p>
           <div class="content-list">
             <ul>
-              <li v-for="(list, index) in item.projectContent" :key="index">{{ list.content }}</li>
+              <li v-for="(list, index) in item.projectContent" :key="index">
+                {{ list.content }}
+              </li>
             </ul>
           </div>
         </div>

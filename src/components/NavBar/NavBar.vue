@@ -16,7 +16,11 @@
       <el-popover :width="200" trigger="click" teleported>
         <template #reference>
           <span class="contact-me">
-            <svg-icon icon-name="icon-lianxiwomen1" :color="iconColor" size="16px"></svg-icon>
+            <svg-icon
+              icon-name="icon-lianxiwomen1"
+              :color="iconColor"
+              size="16px"
+            ></svg-icon>
             官方交流群
           </span>
         </template>
@@ -35,7 +39,11 @@
       <el-popover :width="200" trigger="click" teleported>
         <template #reference>
           <span class="contact-me">
-            <svg-icon icon-name="icon-lianxiwomen1" :color="iconColor" size="16px"></svg-icon>
+            <svg-icon
+              icon-name="icon-lianxiwomen1"
+              :color="iconColor"
+              size="16px"
+            ></svg-icon>
             联系我
           </span>
         </template>
@@ -51,11 +59,27 @@
         </div>
       </el-popover>
 
-      <a href="https://github.com/wyx6/free-resume" target="_blank" rel="noopener noreferrer">
-        <svg-icon icon-name="icon-gitee-fill-round" :color="iconColor" size="31px"></svg-icon>
+      <a
+        href="https://github.com/wyx6/free-resume"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg-icon
+          icon-name="icon-gitee-fill-round"
+          :color="iconColor"
+          size="31px"
+        ></svg-icon>
       </a>
-      <a href="https://github.com/wyx6/free-resume" target="_blank" rel="noopener noreferrer">
-        <svg-icon icon-name="icon-github-fill" :color="iconColor" size="35px"></svg-icon>
+      <a
+        href="https://github.com/wyx6/free-resume"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg-icon
+          icon-name="icon-github-fill"
+          :color="iconColor"
+          size="35px"
+        ></svg-icon>
       </a>
     </div>
   </div>

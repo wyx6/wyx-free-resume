@@ -4,7 +4,12 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="70px" label-position="left">
         <el-form-item label="姓名:">
-          <el-input v-model="modelItem.data.name" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.name"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
         <el-form-item label="简介:">
           <el-input
@@ -17,11 +22,21 @@
           <el-switch v-model="modelItem.data.isShow.abstract" />
         </el-form-item>
         <el-form-item label="年龄:">
-          <el-input v-model="modelItem.data.age" type="text" maxlength="2" show-word-limit />
+          <el-input
+            v-model="modelItem.data.age"
+            type="text"
+            maxlength="2"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.age" />
         </el-form-item>
         <el-form-item label="地址:">
-          <el-input v-model="modelItem.data.address" type="text" maxlength="30" show-word-limit />
+          <el-input
+            v-model="modelItem.data.address"
+            type="text"
+            maxlength="30"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.address" />
         </el-form-item>
         <el-form-item label="工作经验:">
@@ -43,7 +58,12 @@
           <el-switch v-model="modelItem.data.isShow.phoneNumber" />
         </el-form-item>
         <el-form-item label="邮箱地址:">
-          <el-input v-model="modelItem.data.email" type="text" maxlength="30" show-word-limit />
+          <el-input
+            v-model="modelItem.data.email"
+            type="text"
+            maxlength="30"
+            show-word-limit
+          />
           <el-switch v-model="modelItem.data.isShow.email" />
         </el-form-item>
         <el-form-item label="头像上传:">
@@ -84,11 +104,11 @@ import { ElMessage } from 'element-plus/lib/components/message/index'
 import CommonOptions from './CommonOptions.vue'
 import CommonTitleOptions from './CommonTitleOptions.vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
-defineOptions({ name: 'BASE_INFO_OPTIONS' })
+defineOptions({ name: 'BASEINFOOPTIONS' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
 
-let activeName = ref('data')
+const activeName = ref('data')
 
 /**
  * 数据配置
@@ -104,7 +124,7 @@ const beforeAvatarUpload: any = (rawFile: any) => {
     return false
   }
   // 图片转成base64
-  let reader = new FileReader()
+  const reader = new FileReader()
   reader.readAsDataURL(rawFile)
   reader.onload = (e) => {
     imageUrl.value = e.target?.result as string

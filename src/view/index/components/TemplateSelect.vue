@@ -5,12 +5,15 @@
       content="用心设计每一套模板，适合各行各业从业者"
       title-color="#000"
       content-color="#7f8b96"
-    >
-    </IntroduceTitle>
+    ></IntroduceTitle>
     <!-- 模板列表 -->
     <div class="card-list">
       <template v-for="(item, index) in templateList" :key="index">
-        <TemplateCard :card-data="item" @to-design="toDesign(item)" class="card"></TemplateCard>
+        <TemplateCard
+          :card-data="item"
+          class="card"
+          @to-design="toDesign(item)"
+        ></TemplateCard>
       </template>
     </div>
   </div>

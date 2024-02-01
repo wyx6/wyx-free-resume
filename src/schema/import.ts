@@ -75,7 +75,8 @@ const IMPORT_JSON = {
         name: '小希想学前端',
         age: 25,
         address: '四川成都',
-        avatar: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        avatar:
+          'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
         workService: 3,
         phoneNumber: '028-1234321',
         email: '12322233@qq.com',
@@ -240,12 +241,14 @@ const IMPORT_JSON = {
           {
             skillName: 'JavaScript',
             proficiency: '一般',
-            introduce: '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术'
+            introduce:
+              '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术'
           },
           {
             skillName: 'JavaScript',
             proficiency: '熟悉',
-            introduce: '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术'
+            introduce:
+              '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术'
           },
           {
             skillName: 'JavaScript',
@@ -572,7 +575,8 @@ const IMPORT_JSON = {
         model: 'HOBBIES',
         show: true,
         title: '兴趣爱好',
-        content: '我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂',
+        content:
+          '我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂',
         style: {
           textColor: '#757575',
           textFontSize: '14px',

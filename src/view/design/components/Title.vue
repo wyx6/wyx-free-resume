@@ -1,9 +1,22 @@
 <template>
   <div :class="['title', { 'collapse-center': !status }]">
     <h1 v-show="status">{{ title }}</h1>
-    <el-tooltip v-if="showCollapse" class="box-item" effect="dark" :content="tooltipTitle">
-      <div ref="switchRef" class="unfold-collapse-box" @click="unflodOrCollapse">
-        <svg-icon icon-name="icon-shouqi" color="#00c091" size="24px"></svg-icon>
+    <el-tooltip
+      v-if="showCollapse"
+      class="box-item"
+      effect="dark"
+      :content="tooltipTitle"
+    >
+      <div
+        ref="switchRef"
+        class="unfold-collapse-box"
+        @click="unflodOrCollapse"
+      >
+        <svg-icon
+          icon-name="icon-shouqi"
+          color="#00c091"
+          size="24px"
+        ></svg-icon>
       </div>
     </el-tooltip>
   </div>

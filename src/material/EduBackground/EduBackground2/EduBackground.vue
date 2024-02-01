@@ -23,9 +23,13 @@
           </span>
         </div>
         <!-- 专业 -->
-        <p v-if="modelData.isShow.specialized" class="special">{{ item.specialized }}</p>
+        <p v-if="modelData.isShow.specialized" class="special">
+          {{ item.specialized }}
+        </p>
         <!-- 教学经历 -->
-        <p v-if="modelData.isShow.majorCourse" class="majorCourse">{{ item.majorCourse }}</p>
+        <p v-if="modelData.isShow.majorCourse" class="majorCourse">
+          {{ item.majorCourse }}
+        </p>
       </ul>
     </div>
   </div>

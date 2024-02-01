@@ -2,10 +2,15 @@
 <template>
   <div class="skill-specialties">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 技能特长 -->
     <ul>
-      <li v-for="(item, index) in modelData.LIST" :key="index">{{ item.introduce }}</li>
+      <li v-for="(item, index) in modelData.LIST" :key="index">
+        {{ item.introduce }}
+      </li>
     </ul>
   </div>
 </template>

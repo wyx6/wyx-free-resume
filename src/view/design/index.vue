@@ -5,7 +5,7 @@
     <!-- 内容区域 -->
     <div class="content">
       <!-- 模块数据数据配置区域 -->
-      <div class="left" :key="refreshUuid">
+      <div :key="refreshUuid" class="left">
         <!-- 模块标题 -->
         <Title :title="cptTitle"></Title>
         <c-scrollbar
@@ -23,13 +23,16 @@
           <GlobalStyleOptions v-else></GlobalStyleOptions>
         </c-scrollbar>
       </div>
-
+      <!-- eslint-disable vue/require-component-is -->
       <!-- 预览区域 -->
-      <div class="center" :key="refreshUuid">
-        <div class="resume-view" ref="htmlPdf">
+      <div :key="refreshUuid" class="center">
+        <div ref="htmlPdf" class="resume-view">
           <!-- 简历模块 -->
           <div ref="htmlContentPdf">
-            <component is="custom" @changeHeight="contentChangeHeight"></component>
+            <component
+              is="custom"
+              @changeHeight="contentChangeHeight"
+            ></component>
           </div>
           <!-- 分页分割线 -->
           <template v-if="linesNumber > 0">
@@ -37,11 +40,13 @@
             <div
               v-for="(item, index) in linesNumber"
               :ref="(el) => setLinesRef(el, index)"
-              :style="{ top: `${1128 + 1132 * index}px` }"
               :key="index"
+              :style="{ top: `${1128 + 1132 * index}px` }"
               class="lines"
             >
-              <p class="tips">如果分割线遮挡内容，请通过调整模块上下边距以显示内容！</p>
+              <p class="tips">
+                如果分割线遮挡内容，请通过调整模块上下边距以显示内容！
+              </p>
               <p class="page">{{ index + 1 }}/{{ linesNumber }}</p>
             </div>
           </template>
@@ -49,10 +54,10 @@
       </div>
 
       <!-- 模块操作区域 -->
-      <div class="right" ref="leftRef">
+      <div ref="leftRef" class="right">
         <CScrollbar trigger="hover">
           <Title show-collapse @unflod-or-collapse="unflodOrCollapse"></Title>
-          <model-list :left-show="leftStaus" :key="refreshUuid"></model-list>
+          <model-list :key="refreshUuid" :left-show="leftStaus"></model-list>
         </CScrollbar>
       </div>
     </div>
@@ -86,7 +91,9 @@ const { cptTitle, cptName } = storeToRefs(appStore.useSelectMaterialStore)
 const { changeResumeJsonData } = appStore.useResumeJsonNewStore
 const { refreshUuid } = storeToRefs(appStore.useUuidStore)
 const { setUuid } = appStore.useUuidStore
-const { cptOptionsName, cptKeyId } = storeToRefs(appStore.useSelectMaterialStore) //选中模块数据配置项
+const { cptOptionsName, cptKeyId } = storeToRefs(
+  appStore.useSelectMaterialStore
+) //选中模块数据配置项
 const { resumeJsonNewStore } = storeToRefs(appStore.useResumeJsonNewStore) // store里的模板数据
 
 openGlobalLoading()
@@ -121,7 +128,7 @@ const resetStoreLocal = async () => {
 //进入简历设计页面，数据初始化
 const localDataJson: any = localStorage.getItem('resumeDraft')
 if (localDataJson) {
-  let tempLocalData = JSON.parse(localDataJson)[id as string] //根据id获取对应模板的本地数据
+  const tempLocalData = JSON.parse(localDataJson)[id as string] //根据id获取对应模板的本地数据
   if (tempLocalData) {
     //更新模板数据
     changeResumeJsonData(tempLocalData)
@@ -145,9 +152,9 @@ const reset = () => {
   // changeResumeJsonData(downloadResumeJson)
   globalStyleSetting() // 重置选中模块
   // 删除本地该条数据
-  let localData = localStorage.getItem('resumeDraft') // 本地缓存数据
+  const localData = localStorage.getItem('resumeDraft') // 本地缓存数据
   if (localData) {
-    let allData = JSON.parse(localData)
+    const allData = JSON.parse(localData)
     if (Object.keys(allData).length > 1) {
       if (allData[id as string]) {
         delete allData[id as string] // 删除该条数据
@@ -169,7 +176,7 @@ const reset = () => {
 //生成PDF
 const { resetSelectModel } = appStore.useSelectMaterialStore
 const generateReport = async () => {
-  let temp = linesNumber.value
+  const temp = linesNumber.value
   linesNumber.value = 0
   resetSelectModel() // 重置选中模块
   await nextTick()
@@ -261,7 +268,8 @@ const contentChangeHeight = (height: number) => {
         z-index: 10;
         width: 820px;
         height: 24px;
-        background: #f3f3f3 url(@/assets/images/paging_bg.png) center top no-repeat;
+        background: #f3f3f3 url(@/assets/images/paging_bg.png) center top
+          no-repeat;
         user-select: none;
         pointer-events: none;
         position: absolute;

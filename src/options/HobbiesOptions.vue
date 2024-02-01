@@ -4,7 +4,12 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="80px" label-position="left">
         <el-form-item label="标题名称:">
-          <el-input v-model="modelItem.data.title" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.title"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
         <el-form-item label="兴趣爱好:">
           <el-input
@@ -29,8 +34,8 @@
 import { ref } from 'vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
 import CommonOptions from './CommonOptions.vue' // 公共属性设置
-defineOptions({ name: 'HOBBIES_OPTIONS' })
+defineOptions({ name: 'HOBBIESOPTIONS' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
-let activeName = ref('data')
+const activeName = ref('data')
 </script>

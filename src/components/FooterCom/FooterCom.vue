@@ -2,13 +2,17 @@
   <div class="footer-box">
     <ul>
       <li>
-        <svg-icon icon-name="icon-bilibili-copy" class-name="bilibili"></svg-icon>
+        <svg-icon
+          icon-name="icon-bilibili-copy"
+          class-name="bilibili"
+        ></svg-icon>
         <a
           href="https://juejin.cn/user/2063136680322247/posts"
           target="_blank"
           rel="noopener noreferrer"
-          >小希学前端</a
         >
+          小希学前端
+        </a>
       </li>
       <div class="lines"></div>
       <li>
@@ -17,18 +21,23 @@
           href="https://juejin.cn/user/2063136680322247/posts"
           target="_blank"
           rel="noopener noreferrer"
-          >掘金</a
         >
+          掘金
+        </a>
       </li>
       <div class="lines"></div>
       <li>
-        <svg-icon icon-name="icon-shejiaotubiao-10" class-name="zhihu"></svg-icon>
+        <svg-icon
+          icon-name="icon-shejiaotubiao-10"
+          class-name="zhihu"
+        ></svg-icon>
         <a
           href="https://juejin.cn/user/2063136680322247/posts"
           target="_blank"
           rel="noopener noreferrer"
-          >小希学前端</a
         >
+          小希学前端
+        </a>
       </li>
     </ul>
     <!-- 访问量 -->

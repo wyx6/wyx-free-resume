@@ -15,7 +15,8 @@ const MODEL_DATA_JSON: IMODELDATAJSON = {
     name: '小希学前端把',
     age: 25,
     address: '四川成都', // 所在地址
-    avatar: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', // 头像地址
+    avatar:
+      'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', // 头像地址
     workService: 3, // 工作年限
     phoneNumber: '028-1234321', // 联系电话
     email: '12322233@qq.com', // 邮箱
@@ -93,12 +94,14 @@ const MODEL_DATA_JSON: IMODELDATAJSON = {
       {
         skillName: 'JavaScript', // 技能名称
         proficiency: '一般', // 熟练度
-        introduce: '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术' // 介绍
+        introduce:
+          '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术' // 介绍
       },
       {
         skillName: 'JavaScript', // 技能名称
         proficiency: '熟悉', // 熟练度
-        introduce: '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术' // 介绍
+        introduce:
+          '熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术熟练掌握该项技术' // 介绍
       },
       {
         skillName: 'JavaScript', // 技能名称
@@ -251,7 +254,8 @@ const MODEL_DATA_JSON: IMODELDATAJSON = {
     model: 'HOBBIES',
     show: true,
     title: '兴趣爱好',
-    content: '我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂',
+    content:
+      '我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂我喜欢打杂',
     style: {
       textColor: '#757575',
       textFontSize: '14px',

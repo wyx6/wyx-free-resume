@@ -10,7 +10,11 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "prettier": "prettier --write .",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --config commitlint.config.cjs -e -V",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.0.2",
@@ -32,20 +36,26 @@
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@tsconfig/node18": "^2.0.1",
     "@types/axios": "^0.14.0",
     "@types/jspdf": "^2.0.0",
     "@types/node": "^18.16.8",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/tsconfig": "^0.4.0",
+    "commitizen": "^4.3.0",
     "consola": "^3.2.2",
-    "eslint": "^8.39.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.11.0",
+    "eslint-plugin-vue": "^9.14.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
@@ -65,11 +75,21 @@
     "vue-tsc": "^1.6.4"
   },
   "lint-staged": {
-    "*.{vue,js}": [
-      "npm run lint"
+    "*.{js,jsx,vue,ts,tsx}": [
+      "pnpm lint",
+      "pnpm prettier",
+      "git add"
     ]
   },
   "peerDependencies": {
     "codemirror": "6.x"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
   }
 }

@@ -1,15 +1,28 @@
 <template>
   <div class="chatArea">
     <h2>您好！！这里是简历智能助手，我可以回答您任何有关求职的问题！</h2>
-    <div class="chat_container" ref="chatContainer">
+    <div ref="chatContainer" class="chat_container">
       <div v-for="(item, index) in randerList" :key="index">
-        <chatRaw :is-ai="item.isAi" :value="item.value" :id="item.id ? item.id : 'users'"></chatRaw>
+        <chatRaw
+          :id="item.id ? item.id : 'users'"
+          :is-ai="item.isAi"
+          :value="item.value"
+        ></chatRaw>
       </div>
     </div>
     <form ref="form" @submit="handleSubmit">
-      <textarea name="prompt" rows="1" cols="1" placeholder="Ask AiHelper..."></textarea>
-      <button class="clear" type="button" @click="clearRenderList">Clear</button>
-      <button type="submit"><img src="@/assets/images/send.svg" alt="send" /></button>
+      <textarea
+        name="prompt"
+        rows="1"
+        cols="1"
+        placeholder="Ask AiHelper..."
+      ></textarea>
+      <button class="clear" type="button" @click="clearRenderList">
+        Clear
+      </button>
+      <button type="submit">
+        <img src="@/assets/images/send.svg" alt="send" />
+      </button>
     </form>
   </div>
 </template>
@@ -26,7 +39,7 @@ const chatContainer = ref<any>(null)
 const typeText = (randerDataList: any, text: any) => {
   let index = 0
 
-  let interval = setInterval(() => {
+  const interval = setInterval(() => {
     if (index < text.length) {
       const length = randerDataList.length
       randerDataList[length - 1].value += text.charAt(index)
@@ -49,10 +62,10 @@ const generateUniqueId = () => {
 // 渲染结点的数据集合
 interface RanderNode {
   isAi: boolean
-  value: FormDataEntryValue
+  value
   id?: string
 }
-let randerList = reactive<RanderNode[]>([])
+const randerList = reactive<RanderNode[]>([])
 
 // 提交表单
 const handleSubmit = async (e: any) => {
@@ -61,7 +74,7 @@ const handleSubmit = async (e: any) => {
 
   // 获取表单输入数据
   const data = new FormData(form.value)
-  let useAskValue: FormDataEntryValue = data.get('prompt') as FormDataEntryValue
+  const useAskValue = data.get('prompt')
   randerList.push({ isAi: false, value: useAskValue })
 
   // 清空输入框
@@ -91,7 +104,11 @@ const handleSubmit = async (e: any) => {
     typeText(randerList, parsedData)
   } else {
     const err = await response.text()
-    randerList.push({ isAi: true, value: 'Something went wrong"', id: uniqueId })
+    randerList.push({
+      isAi: true,
+      value: 'Something went wrong"',
+      id: uniqueId
+    })
     alert(err)
   }
 }

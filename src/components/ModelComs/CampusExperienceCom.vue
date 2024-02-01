@@ -10,7 +10,9 @@
           <!-- 经历时间 -->
           <li v-if="modelData.isShow.date">{{ formatDate(item.date) }}</li>
           <!-- 项目名称 -->
-          <li v-if="modelData.isShow.campusBriefly">{{ item.campusBriefly }}</li>
+          <li v-if="modelData.isShow.campusBriefly">
+            {{ item.campusBriefly }}
+          </li>
           <!-- 主要职责 -->
           <li v-if="modelData.isShow.campusDuty">{{ item.campusDuty }}</li>
         </ul>

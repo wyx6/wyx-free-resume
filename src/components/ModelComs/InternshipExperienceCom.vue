@@ -8,7 +8,9 @@
       <div v-for="(item, index) in modelData.LIST" :key="index" class="list">
         <ul>
           <!-- 经历时间 -->
-          <li v-if="modelData.isShow.date" class="list-title">{{ formatDate(item.date) }}</li>
+          <li v-if="modelData.isShow.date" class="list-title">
+            {{ formatDate(item.date) }}
+          </li>
           <!-- 公司名称 -->
           <li class="list-title">{{ item.companyName }}</li>
           <!-- 主要职责 -->
@@ -19,7 +21,9 @@
           <p class="left">实习内容</p>
           <div class="content-list">
             <ul>
-              <li v-for="(list, index) in item.jobContent" :key="index">{{ list.content }}</li>
+              <li v-for="(list, index) in item.jobContent" :key="index">
+                {{ list.content }}
+              </li>
             </ul>
           </div>
         </div>

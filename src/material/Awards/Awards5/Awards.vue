@@ -2,13 +2,18 @@
 <template>
   <div class="awards">
     <!-- 标题 -->
-    <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
+    <model-title
+      :title="modelData.title"
+      :model-style="modelStyle"
+    ></model-title>
     <!-- 荣誉奖项 -->
     <div class="awards-list">
       <ul v-for="(item, index) in modelData.LIST" :key="index">
         <div class="award-left">
           <!-- 奖项名称 -->
-          <li v-show="modelData.isShow.awardsName" class="list-one">{{ item.awardsName }}</li>
+          <li v-show="modelData.isShow.awardsName" class="list-one">
+            {{ item.awardsName }}
+          </li>
           <!-- 奖项等级 -->
           <li v-show="modelData.isShow.awardsGrade">{{ item.awardsGrade }}</li>
         </div>

@@ -4,7 +4,12 @@
     <el-tab-pane label="数据配置" name="data">
       <el-form label-width="70px" label-position="left">
         <el-form-item label="标题:">
-          <el-input v-model="modelItem.data.name" type="text" maxlength="15" show-word-limit />
+          <el-input
+            v-model="modelItem.data.name"
+            type="text"
+            maxlength="15"
+            show-word-limit
+          />
         </el-form-item>
         <el-form-item label="一句话:">
           <el-input
@@ -33,11 +38,11 @@ import { ref } from 'vue'
 import CommonOptions from './CommonOptions.vue'
 import CommonTitleOptions from './CommonTitleOptions.vue'
 import useDesignSelectModelItem from '@/hooks/material/useDesignSelectModelItem'
-defineOptions({ name: 'CUSTOM_OPTIONS_2' })
+defineOptions({ name: 'CUSTOMOPTIONS2' })
 // 选中的模块
 const { modelItem } = useDesignSelectModelItem()
 
-let activeName = ref('data')
+const activeName = ref('data')
 </script>
 <style lang="scss">
 .avatar-uploader .el-upload {

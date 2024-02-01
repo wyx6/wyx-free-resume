@@ -16,7 +16,8 @@ const downloadPDF = (
 
   const canvas: HTMLCanvasElement = document.createElement('canvas')
   let abs: number = 0
-  const win_in: number = document.documentElement.clientWidth || document.body.clientWidth // 获得当前可视窗口的宽度（不包含滚动条）
+  const win_in: number =
+    document.documentElement.clientWidth || document.body.clientWidth // 获得当前可视窗口的宽度（不包含滚动条）
   const win_out: number = window.innerWidth // 获得当前窗口的宽度（包含滚动条）
 
   if (win_out > win_in) {

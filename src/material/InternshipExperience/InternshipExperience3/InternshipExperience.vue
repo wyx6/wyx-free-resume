@@ -1,8 +1,14 @@
 <template>
-  <internship-experience-com-vue :model-data="modelData" :model-style="modelStyle">
+  <internship-experience-com-vue
+    :model-data="modelData"
+    :model-style="modelStyle"
+  >
     <!-- 标题 -->
     <template #model-title>
-      <model-title-vue :title="modelData.title" :iconfont="modelData.iconfont"></model-title-vue>
+      <model-title-vue
+        :title="modelData.title"
+        :iconfont="modelData.iconfont"
+      ></model-title-vue>
     </template>
   </internship-experience-com-vue>
 </template>

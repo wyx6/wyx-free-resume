@@ -13,35 +13,59 @@
         </el-icon>
       </p>
       <el-input
-        ref="titleIptRef"
         v-show="showInput"
-        autofocus
+        ref="titleIptRef"
         v-model="resumeJsonNewStore.TITLE"
+        autofocus
         placeholder="请输入标题"
+        style="--el-color-primary: #00c091"
         @blur="blurTitle"
         @keyup.enter="onEnter"
-        style="--el-color-primary: #00c091"
       ></el-input>
     </div>
     <div class="nav-right">
-      <el-tooltip class="box-item" effect="dark" content="返回首页" placement="bottom">
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="返回首页"
+        placement="bottom"
+      >
         <div class="icon-box" @click="toHome">
           <el-icon :size="20" color="#fff">
             <Back />
           </el-icon>
         </div>
       </el-tooltip>
-      <el-tooltip class="box-item" effect="dark" content="保存草稿" placement="bottom">
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="保存草稿"
+        placement="bottom"
+      >
         <div class="icon-box" @click="saveDraft">
-          <svg-icon icon-name="icon-caogaoxiang1" color="#fff" size="17px"></svg-icon>
+          <svg-icon
+            icon-name="icon-caogaoxiang1"
+            color="#fff"
+            size="17px"
+          ></svg-icon>
         </div>
       </el-tooltip>
-      <el-tooltip class="box-item" effect="dark" content="导出为PDF" placement="bottom">
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="导出为PDF"
+        placement="bottom"
+      >
         <div class="icon-box" @click="generateReport">
           <svg-icon icon-name="icon-pdf" color="#fff" size="17px"></svg-icon>
         </div>
       </el-tooltip>
-      <el-tooltip class="box-item" effect="dark" content="导出为JSON数据" placement="bottom">
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="导出为JSON数据"
+        placement="bottom"
+      >
         <div class="icon-box" @click="exportJSON">
           <svg-icon icon-name="icon-xiazai" color="#fff" size="17px"></svg-icon>
         </div>
@@ -54,12 +78,25 @@
         placement="bottom"
       >
         <div class="icon-box" @click="importJSON">
-          <svg-icon icon-name="icon-yunduanshangchuan" color="#fff" size="19px"></svg-icon>
+          <svg-icon
+            icon-name="icon-yunduanshangchuan"
+            color="#fff"
+            size="19px"
+          ></svg-icon>
         </div>
       </el-tooltip>
-      <el-tooltip class="box-item" effect="dark" content="重置所有设置" placement="bottom">
+      <el-tooltip
+        class="box-item"
+        effect="dark"
+        content="重置所有设置"
+        placement="bottom"
+      >
         <div class="icon-box" @click="reset">
-          <svg-icon icon-name="icon-zhongzhi" color="#fff" size="17px"></svg-icon>
+          <svg-icon
+            icon-name="icon-zhongzhi"
+            color="#fff"
+            size="17px"
+          ></svg-icon>
         </div>
       </el-tooltip>
     </div>
@@ -80,7 +117,12 @@ import 'element-plus/theme-chalk/src/message-box.scss'
 // 简历数据
 const { resumeJsonNewStore } = storeToRefs(appStore.useResumeJsonNewStore)
 
-const emits = defineEmits(['exportJSON', 'generateReport', 'importJSON', 'reset'])
+const emits = defineEmits([
+  'exportJSON',
+  'generateReport',
+  'importJSON',
+  'reset'
+])
 
 //路由是否自定义模板
 const route = useRoute()

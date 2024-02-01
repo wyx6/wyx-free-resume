@@ -3,7 +3,11 @@
  */
 
 // 删除当前模块
-export const useDeleteModel = (modelList: any[], modelItem: any, index: number) => {
+export const useDeleteModel = (
+  modelList: any[],
+  modelItem: any,
+  index: number
+) => {
   let sum: number = 0 // 是否有相同的模块
   modelList.forEach((item) => {
     if (item.model === modelItem.model) {

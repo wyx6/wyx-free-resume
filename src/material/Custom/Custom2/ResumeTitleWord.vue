@@ -15,7 +15,12 @@
           ></svg-icon>
         </div>
         <div class="icon-box">
-          <svg-icon icon-name="icon-rongyu" class-name="icon" color="#fff" size="22px"></svg-icon>
+          <svg-icon
+            icon-name="icon-rongyu"
+            class-name="icon"
+            color="#fff"
+            size="22px"
+          ></svg-icon>
         </div>
         <div class="icon-box">
           <svg-icon
@@ -114,8 +119,12 @@ defineProps<{
       height: 30px;
       width: 60%;
       background-color: v-bind('modelStyle.themeColor');
-      background: linear-gradient(-45deg, transparent 20px, v-bind('modelStyle.themeColor') 0) top
-        right;
+      background: linear-gradient(
+          -45deg,
+          transparent 20px,
+          v-bind('modelStyle.themeColor') 0
+        )
+        top right;
     }
 
     .right {

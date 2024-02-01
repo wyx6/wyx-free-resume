@@ -14,13 +14,17 @@
         <div class="date-name-box">
           <span v-if="modelData.isShow.date">{{ formatDate(item.date) }}</span>
           <!-- 公司名称 -->
-          <span v-if="modelData.isShow.projectName">{{ item.projectName }}</span>
+          <span v-if="modelData.isShow.projectName">
+            {{ item.projectName }}
+          </span>
         </div>
         <!-- 主要职责 -->
         <p v-if="modelData.isShow.posts" class="campusDuty">{{ item.posts }}</p>
         <!-- 工作内容 -->
         <ul class="campusContent">
-          <li v-for="(list, index) in item.projectContent" :key="index">{{ list.content }}</li>
+          <li v-for="(list, index) in item.projectContent" :key="index">
+            {{ list.content }}
+          </li>
         </ul>
       </ul>
     </div>

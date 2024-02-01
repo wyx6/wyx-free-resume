@@ -1,6 +1,6 @@
 <template>
   <div class="model-list-box">
-    <div class="model-ul" v-if="resumeJsonNewStore.COMPONENTS.length">
+    <div v-if="resumeJsonNewStore.COMPONENTS.length" class="model-ul">
       <draggable
         :list="resumeJsonNewStore.COMPONENTS"
         item-key="id"
@@ -13,7 +13,10 @@
             :class="[
               'model-list-item',
               { 'collapse-center': !leftShow },
-              { active: appStore.useSelectMaterialStore.cptKeyId === element.keyId }
+              {
+                active:
+                  appStore.useSelectMaterialStore.cptKeyId === element.keyId
+              }
             ]"
             @click="selectModel(element)"
           >
@@ -27,7 +30,11 @@
                   :disabled="leftShow"
                 >
                   <svg-icon
-                    :icon-name="element.data.iconfont ? element.data.iconfont : 'icon-xingquaihao'"
+                    :icon-name="
+                      element.data.iconfont
+                        ? element.data.iconfont
+                        : 'icon-xingquaihao'
+                    "
                     class-name="icon"
                     :color="leftShow ? '#c4c4c4' : '#00c091'"
                     size="16px"
@@ -36,9 +43,13 @@
               </div>
               <p v-show="leftShow">{{ element.data.title }}</p>
             </div>
-            <div class="right" v-show="leftShow">
+            <div v-show="leftShow" class="right">
               <div class="add-model-box">
-                <el-switch v-model="element.show" size="small" active-color="#00C091" />
+                <el-switch
+                  v-model="element.show"
+                  size="small"
+                  active-color="#00C091"
+                />
               </div>
             </div>
           </div>
@@ -62,14 +73,19 @@ const { resumeJsonNewStore } = storeToRefs(appStore.useResumeJsonNewStore)
 //更新选中的模块数据
 const { updateSelectModel } = appStore.useSelectMaterialStore
 const selectModel = (item: any) => {
-  let optionsName: string = item.cptOptionsName
-  let updateData = {
+  const optionsName: string = item.cptOptionsName
+  const updateData = {
     model: item.model,
     optionsName: optionsName,
     title: item.data.title,
     keyId: item.keyId
   }
-  updateSelectModel(updateData.keyId, updateData.optionsName, updateData.title, updateData.keyId)
+  updateSelectModel(
+    updateData.keyId,
+    updateData.optionsName,
+    updateData.title,
+    updateData.keyId
+  )
 }
 
 //选中模块

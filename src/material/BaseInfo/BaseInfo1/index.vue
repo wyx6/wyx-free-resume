@@ -8,13 +8,21 @@
     <div class="user-info">
       <h1>{{ modelData.name }}</h1>
       <!-- 一句话简介 -->
-      <p v-show="isShow.abstract" class="user-abstract">{{ modelData.abstract }}</p>
+      <p v-show="isShow.abstract" class="user-abstract">
+        {{ modelData.abstract }}
+      </p>
       <!-- 年龄、地点、经验等信息 -->
       <ul>
         <li v-show="isShow.age" class="li-border">{{ modelData.age }}岁</li>
-        <li v-show="isShow.address" class="li-border">{{ modelData.address }}</li>
-        <li v-show="isShow.workService" class="li-border">{{ modelData.workService }}年经验</li>
-        <li v-show="isShow.phoneNumber" class="li-border">{{ modelData.phoneNumber }}</li>
+        <li v-show="isShow.address" class="li-border">
+          {{ modelData.address }}
+        </li>
+        <li v-show="isShow.workService" class="li-border">
+          {{ modelData.workService }}年经验
+        </li>
+        <li v-show="isShow.phoneNumber" class="li-border">
+          {{ modelData.phoneNumber }}
+        </li>
         <li v-show="isShow.email">{{ modelData.email }}</li>
       </ul>
     </div>
@@ -25,7 +33,7 @@ import type { IBASEINFO } from '@/interface/model'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 import { reactive } from 'vue'
 defineOptions({
-  name: 'BASE_INFO_1'
+  name: 'BASEINFO1'
 })
 const props = defineProps<{
   modelData: IBASEINFO // 模块数据

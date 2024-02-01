@@ -1,5 +1,5 @@
 <template>
-  <div class="content-box" ref="customContentRef">
+  <div ref="customContentRef" class="content-box">
     <!-- 无布局方式 -->
     <template v-if="resumeJsonNewStore.LAYOUT === 'custom'"></template>
     <!-- 传统布局 -->
@@ -15,7 +15,10 @@
       >
         <template #item="{ element }">
           <div class="list-group-item">
-            <model-box :components="MaterialComponents" :item="element"></model-box>
+            <model-box
+              :components="MaterialComponents"
+              :item="element"
+            ></model-box>
           </div>
         </template>
       </draggable>
@@ -81,7 +84,7 @@ import MaterialComponents from '@/utils/registerMaterialCom' // 所有物料组�
 import { useGetModelIndex } from '@/hooks/useGetModelIndex'
 import { useDeleteModel } from '@/hooks/useDeleteModel'
 import { cloneDeep } from 'lodash'
-defineOptions({ name: 'custom' })
+defineOptions({ name: 'Custom' })
 const emits = defineEmits(['changeHeight'])
 
 // 简历数据
@@ -90,8 +93,12 @@ const { resumeJsonNewStore } = storeToRefs(appStore.useResumeJsonNewStore)
 const leftList = ref<IMATERIALITEM[]>([])
 const rightList = ref<IMATERIALITEM[]>([])
 if (resumeJsonNewStore.value.LAYOUT === 'leftRight') {
-  leftList.value = resumeJsonNewStore.value.COMPONENTS.filter((item) => item.layout === 'left') //左侧列表
-  rightList.value = resumeJsonNewStore.value.COMPONENTS.filter((item) => item.layout === 'right') //右侧列表
+  leftList.value = resumeJsonNewStore.value.COMPONENTS.filter(
+    (item) => item.layout === 'left'
+  ) //左侧列表
+  rightList.value = resumeJsonNewStore.value.COMPONENTS.filter(
+    (item) => item.layout === 'right'
+  ) //右侧列表
 }
 
 watch(
@@ -151,12 +158,14 @@ const rightDeleteModel = (modelItem: IMATERIALITEM) => {
 //监听简历高度变化
 const customContentRef = ref<any>(null)
 const changeHeight = () => {
-  const resizeObserver: ResizeObserver | null = new ResizeObserver(async (entries) => {
-    for (const entry of entries) {
-      let height = (entry.target as HTMLElement).offsetHeight
-      emits('changeHeight', height)
+  const resizeObserver: ResizeObserver | null = new ResizeObserver(
+    async (entries) => {
+      for (const entry of entries) {
+        const height = (entry.target as HTMLElement).offsetHeight
+        emits('changeHeight', height)
+      }
     }
-  })
+  )
   resizeObserver.observe(customContentRef.value)
 }
 onMounted(() => {

@@ -9,9 +9,15 @@
       <div class="detail">
         <ul>
           <li v-show="isShow.age" class="li-border">{{ modelData.age }}岁</li>
-          <li v-show="isShow.address" class="li-border">{{ modelData.address }}</li>
-          <li v-show="isShow.workService" class="li-border">{{ modelData.workService }}年经验</li>
-          <li v-show="isShow.phoneNumber" class="li-border">{{ modelData.phoneNumber }}</li>
+          <li v-show="isShow.address" class="li-border">
+            {{ modelData.address }}
+          </li>
+          <li v-show="isShow.workService" class="li-border">
+            {{ modelData.workService }}年经验
+          </li>
+          <li v-show="isShow.phoneNumber" class="li-border">
+            {{ modelData.phoneNumber }}
+          </li>
           <li v-show="isShow.email">{{ modelData.email }}</li>
         </ul>
       </div>

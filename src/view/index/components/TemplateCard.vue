@@ -1,10 +1,19 @@
 <template>
-  <div class="template-card-box" @mouseover="mouseover" @mouseleave="mouseleave">
+  <div
+    class="template-card-box"
+    @mouseover="mouseover"
+    @mouseleave="mouseleave"
+  >
     <!-- 图片 -->
     <img :src="getAssetsFile(cardData.preview)" alt="" />
     <!-- 遮罩层 -->
     <div v-show="isLayer" class="mask-layer">
-      <div v-if="cardData.name !== 'custom'" class="preview-icon" title="预览" @click="previewImg">
+      <div
+        v-if="cardData.name !== 'custom'"
+        class="preview-icon"
+        title="预览"
+        @click="previewImg"
+      >
         <svg-icon icon-name="icon-yulan" class-name="yulan"></svg-icon>
       </div>
       <div class="design-button" @click="toDesign">立即免费制作</div>
@@ -26,7 +35,7 @@ defineProps<{
 }>()
 const emit = defineEmits(['toDesign'])
 // 鼠标移入显示遮罩层
-let isLayer = ref<boolean>(false)
+const isLayer = ref<boolean>(false)
 const mouseover = () => {
   isLayer.value = true
 }
@@ -35,7 +44,7 @@ const mouseleave = () => {
 }
 
 // 图片预览
-let dialogVisble = ref<boolean>(false)
+const dialogVisble = ref<boolean>(false)
 
 const previewImg = () => {
   dialogVisble.value = true

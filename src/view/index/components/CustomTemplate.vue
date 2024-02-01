@@ -1,12 +1,11 @@
 <template>
-  <div class="custom-template-box" ref="customTempleRef">
+  <div ref="customTempleRef" class="custom-template-box">
     <IntroduceTitle
       title="自定义模板 + 随心所欲"
       content="自定义模板，随意搭配，自定义主题"
       title-color="#000"
       content-color="#7f8b96"
-    >
-    </IntroduceTitle>
+    ></IntroduceTitle>
     <div class="content">
       <div class="left">
         <img src="@/assets/images/index-drag.png" alt="" srcset="" />
