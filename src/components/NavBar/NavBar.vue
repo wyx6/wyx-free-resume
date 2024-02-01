@@ -122,7 +122,7 @@ const toIndex = () => {
 <style lang="scss" scoped>
 .nav-bar-box {
   display: flex;
-  height: 60px;
+  height: 80px;
   width: 100%;
   box-sizing: border-box;
   align-items: center;
@@ -141,13 +141,14 @@ const toIndex = () => {
     align-items: center;
 
     img {
-      width: 60px;
-      height: 70px;
+      width: 65px;
+      height: 75px;
+      margin-right: 10px;
     }
 
     span {
       letter-spacing: 4px;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
       font-family: cursive;
       color: v-bind('fontColor');
@@ -160,7 +161,7 @@ const toIndex = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 22px;
     background-color: v-bind('bgColor');
     color: v-bind('fontColor');
     :hover {

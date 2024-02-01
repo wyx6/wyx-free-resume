@@ -41,7 +41,7 @@ const AiHelper = () => {
   display: flex;
   align-items: center;
   position: relative;
-  background-image: url('@/assets/images/home-banner.png');
+  background: url('@/assets/images/home-banner.png') no-repeat 50% / cover;
 
   .left {
     color: #fff;

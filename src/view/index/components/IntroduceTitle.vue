@@ -26,6 +26,7 @@ defineProps<{
     position: relative;
     margin-bottom: 20px;
     letter-spacing: 3px;
+    font-size: 40px;
     color: v-bind('titleColor');
 
     &::before {
@@ -48,11 +49,10 @@ defineProps<{
       right: -250px;
       top: 50%;
     }
-
-    p {
-      font-size: 14px;
-      color: v-bind('contentColor');
-    }
+  }
+  p {
+    font-size: 22px;
+    color: v-bind('contentColor');
   }
 }
 </style>
