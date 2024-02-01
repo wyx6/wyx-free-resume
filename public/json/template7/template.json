@@ -9,7 +9,7 @@
       "model": "BASE_INFO",
       "cptName": "BASE_INFO_5",
       "cptOptionsName": "BASE_INFO_OPTIONS",
-      "cptTitle": "基础资料and求职意向",
+      "cptTitle": "基础资料",
       "cptX": 0,
       "cptY": 0,
       "cptZ": 0,
@@ -133,7 +133,7 @@
     {
       "keyId": "239aff5c-1d10-45b0-98d0-de4b2923d6dd",
       "model": "SKILL_SPECIALTIES",
-      "cptName": "SKILL_SPECIALTIES_1",
+      "cptName": "SKILL_SPECIALTIES_5",
       "cptOptionsName": "SKILL_SPECIALTIES_OPTIONS",
       "cptTitle": "技能特长",
       "cptX": 0,
@@ -323,7 +323,7 @@
     {
       "keyId": "3245d43d-beda-4aca-90fb-6fe85f7024cb",
       "model": "WORK_EXPERIENCE",
-      "cptName": "WORK_EXPERIENCE_1",
+      "cptName": "WORK_EXPERIENCE_5",
       "cptOptionsName": "WORK_EXPERIENCE_OPTIONS",
       "cptTitle": "工作经验",
       "cptX": 0,
@@ -376,7 +376,7 @@
     {
       "keyId": "ad266652-193f-434e-8cdc-bc31fae28fa2",
       "model": "PROJECT_EXPERIENCE",
-      "cptName": "PROJECT_EXPERIENCE_1",
+      "cptName": "PROJECT_EXPERIENCE_5",
       "cptOptionsName": "PROJECT_EXPERIENCE_OPTIONS",
       "cptTitle": "项目经验",
       "cptX": 0,
@@ -429,7 +429,7 @@
     {
       "keyId": "8e37bbe7-b0c3-44cf-bed1-072640126608",
       "model": "AWARDS",
-      "cptName": "AWARDS_1",
+      "cptName": "AWARDS_5",
       "cptOptionsName": "AWARDS_OPTIONS",
       "cptTitle": "荣誉奖项",
       "cptX": 0,
@@ -477,7 +477,7 @@
     {
       "keyId": "4719c7c1-2b4f-42fd-bbf2-d13b82d1c6bb",
       "model": "HOBBIES",
-      "cptName": "HOBBIES_1",
+      "cptName": "HOBBIES_5",
       "cptOptionsName": "HOBBIES_OPTIONS",
       "cptTitle": "兴趣爱好",
       "cptX": 0,
@@ -521,7 +521,7 @@
     {
       "keyId": "ab1b2840-fc1d-42f7-b00b-51b0b0784974",
       "model": "SELF_EVALUATION",
-      "cptName": "SELF_EVALUATION_1",
+      "cptName": "SELF_EVALUATION_5",
       "cptOptionsName": "SELF_EVALUATION_OPTIONS",
       "cptTitle": "自我评价",
       "cptX": 0,
@@ -558,7 +558,7 @@
     {
       "keyId": "6a841697-9f5c-4100-9838-ab3d7f708e30",
       "model": "WORKS_DISPLAY",
-      "cptName": "WORKS_DISPLAY_1",
+      "cptName": "WORKS_DISPLAY_5",
       "cptOptionsName": "WORKS_DISPLAY_OPTIONS",
       "cptTitle": "作评展示",
       "cptX": 0,

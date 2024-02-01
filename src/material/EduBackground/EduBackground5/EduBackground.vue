@@ -25,7 +25,7 @@
 </template>
 <script setup lang="ts">
 import type { IEDUBACKGROUND } from '@/interface/model'
-import ModelTitle from '../../ModelTitle/ModelTitle1/ModelTitle1.vue'
+import ModelTitle from '../../ModelTitle/ModelTitle5/ModelTitle.vue'
 import { formatDate } from '@/utils/common'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 defineProps<{

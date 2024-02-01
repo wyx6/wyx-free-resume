@@ -6,19 +6,21 @@
     <!-- 荣誉奖项 -->
     <div class="awards-list">
       <ul v-for="(item, index) in modelData.LIST" :key="index">
+        <div class="award-left">
+          <!-- 奖项名称 -->
+          <li v-show="modelData.isShow.awardsName" class="list-one">{{ item.awardsName }}</li>
+          <!-- 奖项等级 -->
+          <li v-show="modelData.isShow.awardsGrade">{{ item.awardsGrade }}</li>
+        </div>
         <!-- 获奖日期 -->
         <li v-show="modelData.isShow.date">{{ formatDate(item.date) }}</li>
-        <!-- 奖项名称 -->
-        <li v-show="modelData.isShow.awardsName">{{ item.awardsName }}</li>
-        <!-- 奖项等级 -->
-        <li v-show="modelData.isShow.awardsGrade">{{ item.awardsGrade }}</li>
       </ul>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import type { IAWARDS } from '@/interface/model'
-import ModelTitle from '../../ModelTitle/ModelTitle1/ModelTitle1.vue'
+import ModelTitle from '../../ModelTitle/ModelTitle5/ModelTitle.vue'
 import { formatDate } from '@/utils/common'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 defineProps<{
@@ -46,7 +48,12 @@ defineProps<{
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      .award-left {
+        display: flex;
+        .list-one {
+          margin-right: 15px;
+        }
+      }
       li {
         list-style: none;
         font-size: v-bind('modelStyle.textFontSize');

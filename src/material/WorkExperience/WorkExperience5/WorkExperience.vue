@@ -1,27 +1,27 @@
-<!-- 项目经验 -->
+<!-- 工作经验 -->
 <template>
-  <div class="project-experience">
+  <div class="work-experience">
     <!-- 标题 -->
     <model-title :title="modelData.title" :model-style="modelStyle"></model-title>
     <!-- 校园经历 -->
-    <div class="project-experience-list">
+    <div class="work-experience-list">
       <div v-for="(item, index) in modelData.LIST" :key="index" class="list">
         <ul>
           <!-- 公司名称 -->
-          <li class="list-title">{{ item.projectName }}</li>
+          <li v-if="modelData.isShow.companyName" class="list-title">{{ item.companyName }}</li>
           <!-- 经历时间 -->
-          <li class="list-title">{{ formatDate(item.date) }}</li>
+          <li v-if="modelData.isShow.date" class="list-title">{{ formatDate(item.date) }}</li>
         </ul>
         <ul>
           <!-- 主要职责 -->
-          <li class="list-title">{{ item.posts }}</li>
+          <li v-if="modelData.isShow.posts" class="list-title">{{ item.posts }}</li>
         </ul>
         <!-- 简述 -->
         <div class="job-content">
-          <p class="left">项目内容</p>
+          <p class="left">工作内容</p>
           <div class="content-list">
             <ul>
-              <li v-for="(list, index) in item.projectContent" :key="index">{{ list.content }}</li>
+              <li v-for="(list, index) in item.jobContent" :key="index">{{ list.content }}</li>
             </ul>
           </div>
         </div>
@@ -30,17 +30,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { IPROJECTEXPERIENCE } from '@/interface/model'
-import ModelTitle from '../../ModelTitle/ModelTitle1/ModelTitle1.vue'
+import type { IWORKEXPERIENCE } from '@/interface/model'
+import ModelTitle from '../../ModelTitle/ModelTitle5/ModelTitle.vue'
 import { formatDate } from '@/utils/common'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 defineProps<{
-  modelData: IPROJECTEXPERIENCE
+  modelData: IWORKEXPERIENCE
   modelStyle: IMODELSTYLE // 模块样式
 }>()
 </script>
 <style lang="scss" scoped>
-.project-experience {
+.work-experience {
   padding-top: v-bind('modelStyle.pTop');
   padding-bottom: v-bind('modelStyle.pBottom');
   padding-left: v-bind('modelStyle.pLeftRight');
@@ -49,7 +49,7 @@ defineProps<{
   margin-bottom: v-bind('modelStyle.mBottom');
   margin-top: v-bind('modelStyle.mTop');
 
-  .project-experience-list {
+  .work-experience-list {
     margin-top: 25px;
 
     .list {
@@ -83,7 +83,6 @@ defineProps<{
           font-size: v-bind('modelStyle.titleFontSize');
           color: v-bind('modelStyle.titleColor');
           font-weight: v-bind('modelStyle.titleFontWeight');
-          font-weight: bold;
         }
 
         .content-list {

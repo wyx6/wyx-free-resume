@@ -26,7 +26,7 @@
 import type { ICAMPUSEXPERIENCE } from '@/interface/model'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 import { formatDate } from '@/utils/common'
-import ModelTitle from '../../ModelTitle/ModelTitle1/ModelTitle1.vue'
+import ModelTitle from '../../ModelTitle/ModelTitle5/ModelTitle.vue'
 defineProps<{
   modelData: ICAMPUSEXPERIENCE
   modelStyle: IMODELSTYLE // 模块样式

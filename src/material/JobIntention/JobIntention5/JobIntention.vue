@@ -34,7 +34,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import ModelTitle from '../../ModelTitle/ModelTitle1/ModelTitle1.vue'
+import ModelTitle from '../../ModelTitle/ModelTitle5/ModelTitle.vue'
 import type { IJOBINTENTION } from '@/interface/model'
 import type { IMODELSTYLE } from '@/interface/modelStyle'
 defineProps<{
