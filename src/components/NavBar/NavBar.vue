@@ -10,7 +10,11 @@
       <div class="template same" @click="toTemplate">简历模板</div>
       <div class="forum same" @click="toForum">求职论坛</div>
       <div class="AI same">
-        <a href="">AI助手</a>
+        <a
+          href="https://share.fastgpt.in/chat/share?shareId=vf7bdfkp0n0adr15gvbnqen9"
+        >
+          AI助手
+        </a>
       </div>
     </div>
     <!-- GitHub -->

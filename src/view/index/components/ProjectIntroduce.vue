@@ -9,7 +9,11 @@
         <div class="button" @click="customTemplate">简历模板</div>
         <div class="button" @click="customTemplate">求职论坛</div>
         <div class="button ai-helper">
-          <a href="">AI助手</a>
+          <a
+            href="https://share.fastgpt.in/chat/share?shareId=vf7bdfkp0n0adr15gvbnqen9"
+          >
+            AI助手
+          </a>
         </div>
       </div>
     </div>
