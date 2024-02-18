@@ -111,8 +111,13 @@ const { id, name } = route.query
 const resetStoreLocal = async () => {
   //根据url获取对应模板的本地数据
   const url = `${location.origin}/json/${name}/template.json`
+  // const url = `http://localhost:3000/resume_template/${id}`
   const data: IDESIGNJSON = await getTemplateJson(url)
+  //请求数据
+  // const res: IDESIGNJSON = await getTemplateJson(id)
+
   let TEMPLATE_JSON
+  // TEMPLATE_JSON = cloneDeep(res.data)
   TEMPLATE_JSON = cloneDeep(data)
   TEMPLATE_JSON.ID = id as string
   TEMPLATE_JSON.NAME = name as string

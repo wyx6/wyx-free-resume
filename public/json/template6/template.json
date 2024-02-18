@@ -1,5 +1,5 @@
 {
-  "ID": "ad8593bb-707f-40d7-a286-936df0021cd7",
+  "ID": "6",
   "TITLE": "模板标题",
   "LAYOUT": "classical",
   "COMPONENTS": [
@@ -77,7 +77,7 @@
         "model": "BASE_INFO",
         "show": true,
         "title": "基本资料",
-        "name": "小希不想学前端",
+        "name": "小希学前端",
         "age": 25,
         "address": "四川成都",
         "avatar": "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",

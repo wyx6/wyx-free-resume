@@ -113,6 +113,7 @@ import { debounce } from 'lodash'
 import { ElMessage } from 'element-plus/lib/components/message/index'
 import { ElMessageBox } from 'element-plus/lib/components/message-box/index'
 import 'element-plus/theme-chalk/src/message-box.scss'
+import { modifyTemplateJson } from '@/http/api/modifyTemplateJson'
 
 // 简历数据
 const { resumeJsonNewStore } = storeToRefs(appStore.useResumeJsonNewStore)
@@ -161,12 +162,19 @@ const saveDraft = () => {
   })
 }
 
-const draftToLocal = () => {
+const draftToLocal = async () => {
   // 获取简历模板的id
   const key: string = resumeJsonNewStore.value.ID
   // 要保存的数据
   let saveData: { [key: string]: any } = {}
   const localDataJson: any = localStorage.getItem('resumeDraft')
+  const resumeJson = resumeJsonNewStore.value
+  // const result = await modifyTemplateJson(JSON.stringify(resumeJson), key)
+
+  // if (result.status == 200) {
+  //   const date: string = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+  //   draftTips.value = `已自动保存草稿${date}`
+  // }
   if (localDataJson) {
     saveData = JSON.parse(localDataJson)
     saveData[key] = resumeJsonNewStore.value

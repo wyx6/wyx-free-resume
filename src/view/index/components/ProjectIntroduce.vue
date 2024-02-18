@@ -8,7 +8,13 @@
         <div class="button" @click="onlineMake">在线制作</div>
         <div class="button" @click="customTemplate">简历模板</div>
         <div class="button" @click="customTemplate">求职论坛</div>
-        <div class="button ai-helper" @click="AiHelper">AI助手</div>
+        <div class="button ai-helper">
+          <a
+            href="https://share.fastgpt.in/chat/share?shareId=vf7bdfkp0n0adr15gvbnqen9"
+          >
+            AI助手
+          </a>
+        </div>
       </div>
     </div>
     <div class="right">
@@ -21,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(['onlineMake', 'customTemplate', 'AiHelper'])
+const emit = defineEmits(['onlineMake', 'customTemplate'])
 
 const onlineMake = () => {
   emit('onlineMake')
@@ -29,9 +35,9 @@ const onlineMake = () => {
 const customTemplate = () => {
   emit('customTemplate')
 }
-const AiHelper = () => {
-  emit('AiHelper')
-}
+// const AiHelper = () => {
+//   emit('AiHelper')
+// }
 </script>
 
 <style lang="scss" scoped>
@@ -96,6 +102,9 @@ const AiHelper = () => {
         &:hover {
           opacity: 0.8;
         }
+        a {
+          color: #fff;
+        }
       }
     }
   }
@@ -108,5 +117,8 @@ const AiHelper = () => {
       height: 50vh;
     }
   }
+}
+a {
+  text-decoration: none;
 }
 </style>

@@ -1,4 +1,5 @@
 import http from '../request'
+import request from '@/utils/request'
 
 export const getTemplateJson: any = (url: string) => {
   return http.request({
@@ -6,3 +7,6 @@ export const getTemplateJson: any = (url: string) => {
     method: 'get'
   })
 }
+
+// export const getTemplateJson: any = (id) =>
+//   request({ url: `/resume_template/${id}`, method: 'get' })

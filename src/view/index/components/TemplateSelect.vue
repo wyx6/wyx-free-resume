@@ -52,6 +52,7 @@ const toDesign = (Item: ITempList) => {
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 25px;
     .card {
       margin-bottom: 30px;

@@ -10,7 +10,6 @@
     <ProjectIntroduce
       @online-make="scrollToMake"
       @custom-template="scrollToCustom"
-      @ai-helper="toChatPage"
     ></ProjectIntroduce>
     <!-- 模板选择 -->
     <Template-select ref="onlineMakeRef"></Template-select>
@@ -93,9 +92,9 @@ const scrollToCustom = () => {
 
 //点击AI助手，跳转到聊天页面
 const router = useRouter()
-const toChatPage = () => {
-  router.push('/chat')
-}
+// const toChatPage = () => {
+//   router.push('/chat')
+// }
 </script>
 
 <style lang="scss" scoped>

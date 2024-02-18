@@ -9,7 +9,13 @@
       <div class="resume same" @click="toMyResume">我的简历</div>
       <div class="template same" @click="toTemplate">简历模板</div>
       <div class="forum same" @click="toForum">求职论坛</div>
-      <div class="AI same" @click="toAIAssistant">AI助手</div>
+      <div class="AI same">
+        <a
+          href="https://share.fastgpt.in/chat/share?shareId=vf7bdfkp0n0adr15gvbnqen9"
+        >
+          AI助手
+        </a>
+      </div>
     </div>
     <!-- GitHub -->
     <div class="right">
@@ -111,7 +117,7 @@ const toTemplate = () => {
   })
 }
 const toForum = () => {}
-const toAIAssistant = () => {}
+
 const toIndex = () => {
   router.push({
     path: '/',
@@ -174,6 +180,9 @@ const toIndex = () => {
     .forum {
     }
     .AI {
+      a {
+        color: v-bind('fontColor');
+      }
     }
   }
   .same {
